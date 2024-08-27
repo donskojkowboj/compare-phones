@@ -1,0 +1,34 @@
+.phonePage {
+  margin-top: 60px;
+}
+
+.topBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  color: #828286;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.96px;
+}
+
+.chooseNumber {
+  max-height: 20px;
+  display: flex;
+  gap: 5px;
+  color: #0D5ADC;
+}
+
+.pages {
+  display: flex;
+  gap: 5px;
+}
+
+.active {
+  padding-bottom: 3px;
+  border-bottom: solid 1px;
+}
