@@ -29,7 +29,32 @@
   font-size: 18px;
 }
 
+.showGoods {
+  font-size: 18px;
+  letter-spacing: 0.36px;
+}
+
+.count {
+  font-size: 18px;
+  letter-spacing: 0.36px;
+}
+
 .active {
   padding-bottom: 3px;
   border-bottom: solid 1px;
+}
+
+.tableHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.label {
+  margin-top: 40px;
+  display: block;
+  color: #0D5ADC;
+  font-size: 18px;
+  letter-spacing: 0.36px;
 }
