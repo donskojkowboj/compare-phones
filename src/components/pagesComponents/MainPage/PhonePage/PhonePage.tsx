@@ -1,4 +1,3 @@
-import { observer } from 'mobx-react-lite';
 import { Container } from '../../Container';
 import styles from './PhonePage.module.scss';
 
@@ -13,19 +12,19 @@ export const PhonePage = () => {
             <span>Отобразить товары:</span>
             <ul className={styles.pages}>
               <li>
-                <a>2</a>
+                <button>2</button>
               </li>
               <li className={styles.active}>
-                <a>3</a>
+                <button>3</button>
               </li>
               <li>
-                <a>4</a>
+                <button>4</button>
               </li>
               <li>
-                <a>5</a>
+                <button>5</button>
               </li>
               <li>
-                <a>6</a>
+                <button>6</button>
               </li>
             </ul>
           </div>

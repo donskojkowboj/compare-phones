@@ -10,9 +10,13 @@ export const Header = () => {
         <div className={styles.headerWrapper}>
           <span className={styles.catalogue}>Каталог</span>
           <div className={styles.rightBlock}>
-            <a className={styles.comparison}>Сравнение</a>
+            <a href="#" className={styles.comparison}>
+              Сравнение
+            </a>
             <div className={styles.account}>
-              <a className={styles.accountText}>Личный кабинет</a>
+              <a href="#" className={styles.accountText}>
+                Личный кабинет
+              </a>
               <a href="#">
                 <AccountIcon />
               </a>

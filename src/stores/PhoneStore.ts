@@ -1,32 +1,18 @@
-import { makeObservable, observable, action } from 'mobx';
+import { makeAutoObservable } from 'mobx';
+import { PhoneType } from './types';
 
 class PhoneStore {
-  phones: any[] = observable([]);
-  displayedPhones: any[] = observable([]);
-  maxDisplay: number = 6;
-  minDisplay: number = 2;
-  defaultDisplay: number = 3;
-  chosenDisplay: number = this.defaultDisplay;
+  phones: PhoneType[] = [];
+  displayedPhones: PhoneType[] = [];
+  displayedPhonesCount: number = 3;
 
   constructor() {
-    makeObservable(this, {
-      chosenDisplay: observable,
-      displayInitialPhones: action,
-      replacePhones: action,
-      chooseDisplayNumber: action,
-    });
-    this.displayInitialPhones();
+    makeAutoObservable(this);
   }
 
-  displayInitialPhones() {
-    this.phones.slice(0, this.defaultDisplay);
-  }
-
-  chooseDisplayNumber(number: number) {
-    this.displayedPhones.slice(0, this.chosenDisplay);
-  }
-
-  replacePhones(id: number) {}
+  setDisplayedPhonesCount = (count: number) => {
+    this.displayedPhonesCount = count;
+  };
 }
 
-export const phoneStore = new PhoneStore();
+export default new PhoneStore();
