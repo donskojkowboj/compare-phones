@@ -10,14 +10,14 @@ export const Header = () => {
         <div className={styles.headerWrapper}>
           <span className={styles.catalogue}>Каталог</span>
           <div className={styles.rightBlock}>
-            <a href="#" className={styles.comparison}>
+            <a href="/" className={styles.comparison}>
               Сравнение
             </a>
             <div className={styles.account}>
-              <a href="#" className={styles.accountText}>
+              <a href="/" className={styles.accountText}>
                 Личный кабинет
               </a>
-              <a href="#">
+              <a href="/">
                 <AccountIcon />
               </a>
             </div>

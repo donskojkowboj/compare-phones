@@ -10,9 +10,15 @@ class PhoneStore {
     makeAutoObservable(this);
   }
 
+  setPhones = (data: Array<PhoneType>) => {
+    for (let i = 0; i < data.length; i++) {
+      this.phones.push(data[i]);
+    }
+  };
+
   setDisplayedPhonesCount = (count: number) => {
     this.displayedPhonesCount = count;
   };
 }
 
-export default new PhoneStore();
+export const phoneStore = new PhoneStore();

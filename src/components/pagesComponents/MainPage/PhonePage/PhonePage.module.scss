@@ -1,60 +1,48 @@
 .phonePage {
   margin-top: 60px;
-}
+  &__topBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__title {
+    color: #828286;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: 0.96px;
+  }
+  &__tableHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__label {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    align-self: flex-end;
+    margin-top: 40px;
+    padding-right: 20px;
+    color: #0D5ADC;
+    font-size: 18px;
+    letter-spacing: 0.36px;
+  }
 
-.topBlock {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.title {
-  color: #828286;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: 0.96px;
-}
-
-.chooseNumber {
-  max-height: 20px;
-  display: flex;
-  gap: 5px;
-  color: #0D5ADC;
-}
-
-.pages {
-  display: flex;
-  gap: 5px;
-  font-size: 18px;
-}
-
-.showGoods {
-  font-size: 18px;
-  letter-spacing: 0.36px;
-}
-
-.count {
-  font-size: 18px;
-  letter-spacing: 0.36px;
-}
-
-.active {
-  padding-bottom: 3px;
-  border-bottom: solid 1px;
-}
-
-.tableHeader {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
 }
 
 
-.label {
-  margin-top: 40px;
-  display: block;
-  color: #0D5ADC;
-  font-size: 18px;
-  letter-spacing: 0.36px;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

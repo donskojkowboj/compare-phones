@@ -1,20 +1,19 @@
+import { PhoneType } from '../../../stores/types';
 import { Button } from '../Button';
-
+import { ChevronIcon } from '../Icons';
 import styles from './PhoneCard.module.scss';
 
-type PhoneCardProps = {
-  img: string;
-  name: string;
-};
-
-export const PhoneCard = ({ img, name }: PhoneCardProps) => {
+export const PhoneCard = ({ name, imgSrc, alt }: PhoneType) => {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.pictureWrapper}>
-        <img className={styles.img} src={img} alt="honor" />
-        <Button />
+    <div className={styles.phoneCard}>
+      <div className={styles.phoneCard__innerWrapper}>
+        <img className={styles.phoneCard__img} src={imgSrc} alt={alt} />
+        <Button
+          additionalClassname={styles.phoneCard__btn}
+          icon={<ChevronIcon />}
+        />
       </div>
-      <span className={styles.phoneName}>{name}</span>
+      <span className={styles.phoneCard__name}>{name}</span>
     </div>
   );
 };
