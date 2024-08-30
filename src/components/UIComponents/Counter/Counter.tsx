@@ -5,11 +5,11 @@ import styles from './Counter.module.scss';
 
 export const Counter = () => {
   const possibleItemsCount = [2, 3, 4, 5, 6];
-  const { displayedPhonesCount } = phoneStore;
+  const { setDisplayedPhonesCount, displayedPhonesCount } = phoneStore;
 
   const handleCounterClick = (e: MouseEvent<HTMLButtonElement>) => {
     const buttonText: number = Number(e.currentTarget.textContent);
-    phoneStore.setDisplayedPhonesCount(buttonText);
+    setDisplayedPhonesCount(buttonText);
   };
 
   const setActiveButton = (count: number) => {

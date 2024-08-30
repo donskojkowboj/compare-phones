@@ -1,16 +1,19 @@
 export type PhoneType = {
   id?: number;
   name?: string;
-  imgSrc?: string;
-  alt?: string;
+  image?: string;
+  chars?: PhoneChars;
+};
+
+type PhoneChars = {
   manufacturer?: string;
-  releaseYear?: number;
-  screenSize?: number;
+  releaseYear?: string;
+  screenSize?: string;
   country?: string;
   memory?: string;
   refreshRate?: string;
   nfc?: boolean;
   esim?: boolean;
   inductive?: boolean;
-  price?: number;
+  price?: string;
 };

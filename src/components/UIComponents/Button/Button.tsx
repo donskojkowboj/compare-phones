@@ -2,33 +2,24 @@ import { HTMLAttributes, ReactNode } from 'react';
 import styles from './Button.module.scss';
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-  icon?: ReactNode;
   isActive?: boolean;
   additionalClassname?: string;
-  children?: string | number;
+  children?: string | number | ReactNode;
 }
 
 export const Button = ({
-  icon,
   isActive,
   children,
   additionalClassname,
   ...rest
 }: ButtonProps) => {
-  const handleIsActive = () => {
-    if (isActive) {
-      return `${styles.active}`;
-    }
-    return '';
-  };
   const createClassname = () => {
-    return `${additionalClassname} ${handleIsActive()}`;
+    return `${additionalClassname} ${isActive ? styles.active : ''}`;
   };
 
   return (
     <button className={createClassname()} {...rest}>
-      {icon}
-      {children}
+      {Boolean(children) && <span>{children}</span>}
     </button>
   );
 };
