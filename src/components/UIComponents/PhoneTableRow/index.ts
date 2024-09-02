@@ -1,0 +1,1 @@
+export { PhoneTableRow } from './PhoneTableRow';
