@@ -4,7 +4,7 @@ import styles from './Button.module.scss';
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   isActive?: boolean;
   additionalClassname?: string;
-  children?: string | number | ReactNode;
+  children: ReactNode;
 }
 
 export const Button = ({

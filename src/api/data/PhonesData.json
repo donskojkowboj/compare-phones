@@ -16,7 +16,6 @@
         "inductive": false,
         "price": "116499 ₽"
       }
-
     },
     {
       "id": 2,
@@ -39,7 +38,7 @@
       "id": 3,
       "name": "iPhone 15 Pro Max",
       "image": "/assets/images/iphone-15-pro-max.png",
-      "chars":{
+      "chars": {
         "manufacturer": "Apple",
         "releaseYear": "2023",
         "screenSize": "6.43",
@@ -85,7 +84,6 @@
         "inductive": true,
         "price": "197499 ₽"
       }
-
     },
     {
       "id": 6,

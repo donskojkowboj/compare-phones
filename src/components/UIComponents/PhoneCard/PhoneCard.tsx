@@ -3,7 +3,9 @@ import { Button } from '../Button';
 import { ChevronIcon } from '../Icons';
 import styles from './PhoneCard.module.scss';
 
-export const PhoneCard = ({ name, image }: PhoneType) => {
+type PhoneCardProps = Pick<PhoneType, 'image' | 'name'>;
+
+export const PhoneCard = ({ name, image }: PhoneCardProps) => {
   return (
     <div className={styles.phoneCard}>
       <div className={styles.phoneCard__innerWrapper}>

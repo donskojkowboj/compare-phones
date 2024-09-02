@@ -1,4 +1,3 @@
-import React from 'react';
 import { observer } from 'mobx-react-lite';
 import { phoneStore } from '../../../stores/PhoneStore';
 import { Container } from '../Container';
@@ -10,8 +9,8 @@ export const PhonePage = observer(() => {
   const { displayedPhones } = phoneStore;
 
   return (
-    <Container>
-      <section className={styles.phonePage}>
+    <section className={styles.phonePage}>
+      <Container>
         <div className={styles.phonePage__topBlock}>
           <h1 className={styles.phonePage__title}>Смартфоны</h1>
           <Counter />
@@ -31,7 +30,7 @@ export const PhonePage = observer(() => {
             );
           })}
         </div>
-      </section>
-    </Container>
+      </Container>
+    </section>
   );
 });

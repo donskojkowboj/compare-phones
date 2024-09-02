@@ -1,8 +1,8 @@
-import React from 'react';
+import { ReactNode } from 'react';
 import { Header } from '../Header';
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export const Layout = ({ children }: LayoutProps) => {
