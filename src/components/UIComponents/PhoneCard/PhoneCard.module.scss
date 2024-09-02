@@ -1,0 +1,27 @@
+.phoneCard {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  &__innerWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__img {
+    height: 120px;
+  }
+  &__btn {
+    position: absolute;
+    z-index: 1000;
+    bottom: 20px;
+    left: 90%;
+  }
+  &__name {
+    color: #3b4157;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+  }
+}

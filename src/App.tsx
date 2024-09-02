@@ -1,12 +1,13 @@
+import { observer } from 'mobx-react-lite';
 import { Layout } from './components/pagesComponents/Layout';
-import { MainPage } from './components/pages/MainPage';
+import { PhonePage } from './components/pagesComponents/PhonePage';
 
-const App = () => {
+const App = observer(() => {
   return (
     <Layout>
-      <MainPage />
+      <PhonePage />
     </Layout>
   );
-};
+});
 
 export default App;

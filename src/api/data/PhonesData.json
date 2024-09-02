@@ -1,0 +1,106 @@
+{
+  "phonesData": [
+    {
+      "id": 1,
+      "name": "Honor Magic V2",
+      "image": "/assets/images/honor-magic-v2.png",
+      "chars": {
+        "manufacturer": "Honor",
+        "releaseYear": "2023",
+        "screenSize": "6.43",
+        "country": "Китай",
+        "memory": "512 ГБ",
+        "refreshRate": "120 Гц",
+        "nfc": true,
+        "esim": true,
+        "inductive": false,
+        "price": "116499 ₽"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Huawei Pura 70 Ultra",
+      "image": "/assets/images/huawei-pura70-ultra.png",
+      "chars": {
+        "manufacturer": "Huawei",
+        "releaseYear": "2024",
+        "screenSize": "6.43",
+        "country": "Китай",
+        "memory": "512 ГБ",
+        "refreshRate": "120 Гц",
+        "nfc": true,
+        "esim": false,
+        "inductive": true,
+        "price": "94499 ₽"
+      }
+    },
+    {
+      "id": 3,
+      "name": "iPhone 15 Pro Max",
+      "image": "/assets/images/iphone-15-pro-max.png",
+      "chars": {
+        "manufacturer": "Apple",
+        "releaseYear": "2023",
+        "screenSize": "6.43",
+        "country": "Китай",
+        "memory": "256 ГБ",
+        "refreshRate": "120 Гц",
+        "nfc": true,
+        "esim": true,
+        "inductive": true,
+        "price": "139499 ₽"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Oppo Find N3",
+      "image": "/assets/images/oppo-find-n3.png",
+      "chars": {
+        "manufacturer": "Oppo",
+        "releaseYear": "2023",
+        "screenSize": "7.82",
+        "country": "Китай",
+        "memory": "512 ГБ",
+        "refreshRate": "120 Гц",
+        "nfc": true,
+        "esim": true,
+        "inductive": false,
+        "price": "197499 ₽"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Samsung Galaxy Z Fold 6",
+      "image": "/assets/images/samsung-galaxy-z-fold6.png",
+      "chars": {
+        "manufacturer": "Samsung",
+        "releaseYear": "2023",
+        "screenSize": "7.6",
+        "country": "Китай",
+        "memory": "512 ГБ",
+        "refreshRate": "120 Гц",
+        "nfc": true,
+        "esim": true,
+        "inductive": true,
+        "price": "197499 ₽"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Xiaomi 14 Ultra",
+      "image": "/assets/images/xiaomi-14-ultra.png",
+      "chars": {
+        "manufacturer": "Xiaomi",
+        "releaseYear": "2024",
+        "screenSize": "6.73",
+        "country": "Китай",
+        "memory": "512 ГБ",
+        "refreshRate": "120 Гц",
+        "nfc": true,
+        "esim": true,
+        "inductive": true,
+        "price": "116499 ₽"
+      }
+    }
+  ]
+}
