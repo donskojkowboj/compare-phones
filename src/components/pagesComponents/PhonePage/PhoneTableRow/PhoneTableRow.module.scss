@@ -1,3 +1,4 @@
+
 .tableRow {
   border-top: 1px solid #CDCFD2;
   display: flex;
@@ -5,22 +6,23 @@
   &:nth-child(10) {
     border-bottom: 1px solid #CDCFD2;
   }
-  &__item {
+  &__firstColumn {
     width: 255px;
+  }
+  &__item {
     padding: 50px 0;
     color: #A4A9B9;
     font-size: 18px;
-    font-style: normal;
     font-weight: 500;
     text-transform: uppercase;
   }
   &__list {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
+    justify-content: space-evenly;
+    width: 100%;
     &_item {
-      min-width: 150px;
+      width: 130px;
       text-align: center;
     }
   }

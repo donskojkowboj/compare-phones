@@ -1,6 +1,6 @@
-import { PhoneType } from '../../../stores/types';
-import { Button } from '../Button';
-import { ChevronIcon } from '../Icons';
+import { PhoneType } from '../../../../stores/types';
+import { Button } from '../../../UIComponents/Button';
+import { ChevronIcon } from '../../../UIComponents/Icons';
 import styles from './PhoneCard.module.scss';
 
 type PhoneCardProps = Pick<PhoneType, 'image' | 'name'>;

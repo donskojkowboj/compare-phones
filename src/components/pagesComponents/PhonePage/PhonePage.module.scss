@@ -16,8 +16,12 @@
     width: 100%;
     height: 204px;
     display: flex;
-    justify-content: flex-start;
     gap: 20px;
+  }
+  &__phoneList {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
   }
   &__firstColumn {
     width: 255px;

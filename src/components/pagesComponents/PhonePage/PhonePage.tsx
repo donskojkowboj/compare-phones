@@ -1,9 +1,9 @@
 import { observer } from 'mobx-react-lite';
 
-import { PhoneTableRow } from '../../UIComponents/PhoneTableRow';
+import { PhoneTableRow } from './PhoneTableRow';
 import { phoneStore } from '../../../stores/PhoneStore';
 import { Container } from '../Container';
-import { PhoneCard } from '../../UIComponents/PhoneCard';
+import { PhoneCard } from './PhoneCard';
 import { Counter } from '../../UIComponents/Counter';
 import styles from './PhonePage.module.scss';
 
@@ -25,24 +25,22 @@ export const PhonePage = observer(() => {
               Показать различия
             </label>
           </div>
-
-          {displayedPhones.map((phone) => {
-            return (
-              <PhoneCard name={phone.name} key={phone.id} image={phone.image} />
-            );
-          })}
+          <div className={styles.phonePage__phoneList}>
+            {displayedPhones.map((phone) => {
+              return (
+                <PhoneCard
+                  name={phone.name}
+                  key={phone.id}
+                  image={phone.image}
+                />
+              );
+            })}
+          </div>
         </div>
 
         <div className={styles.phonePage__tableBody}>
           {tableRows.map((row) => {
-            return (
-              <PhoneTableRow
-                key={row.rowTitle}
-                rowName={row.rowName}
-                rowTitle={row.rowTitle}
-                rowChars={row.rowChars}
-              />
-            );
+            return <PhoneTableRow key={row.rowTitle} row={row} />;
           })}
         </div>
       </Container>

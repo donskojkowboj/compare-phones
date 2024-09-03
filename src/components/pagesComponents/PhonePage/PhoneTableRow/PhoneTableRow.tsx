@@ -1,11 +1,15 @@
-import { TableRowType } from '../../../stores/types';
+import { TableRowType } from '../../../../stores/types';
 
-import { SuccessIcon } from '../Icons';
-import { ErrorIcon } from '../Icons';
+import { SuccessIcon } from '../../../UIComponents/Icons';
+import { ErrorIcon } from '../../../UIComponents/Icons';
 
 import styles from './PhoneTableRow.module.scss';
 
-export const PhoneTableRow = ({ rowTitle, rowChars }: TableRowType) => {
+type PhoneTableRowProps = {
+  row: TableRowType;
+};
+
+export const PhoneTableRow = ({ row }: PhoneTableRowProps) => {
   const displayChar = (char: boolean | string) => {
     if (typeof char === 'boolean') {
       return char ? <SuccessIcon /> : <ErrorIcon />;
@@ -15,9 +19,12 @@ export const PhoneTableRow = ({ rowTitle, rowChars }: TableRowType) => {
 
   return (
     <div className={styles.tableRow}>
-      <div className={styles.tableRow__item}>{rowTitle}</div>
+      <div className={styles.tableRow__firstColumn}>
+        <div className={styles.tableRow__item}>{row.rowTitle}</div>
+      </div>
+
       <ul className={styles.tableRow__list}>
-        {rowChars.map((char, i) => {
+        {row.rowChars.map((char, i) => {
           return (
             <li className={styles.tableRow__list_item} key={i}>
               {displayChar(char)}
