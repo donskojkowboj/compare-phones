@@ -1,17 +1,20 @@
 .header {
   padding: 40px 0;
   border-bottom: 1px solid #a6a5a9;
+
   &__wrapper {
     width: 100%;
     display: flex;
     justify-content: space-between;
   }
+
   &__catalogue {
     color: #0d5adc;
     font-size: 18px;
     font-weight: 900;
     letter-spacing: 0.9px;
   }
+
   &__rightBlock {
     display: flex;
     gap: 48px;
@@ -19,14 +22,17 @@
     font-size: 12px;
     font-weight: 900;
   }
+
   &__account {
     display: flex;
     gap: 19px;
   }
+
   &__comparison {
     align-self: center;
     text-transform: uppercase;
   }
+
   &__accountText {
     align-self: center;
     letter-spacing: 0.24px;

@@ -1,6 +1,8 @@
 import { MouseEvent } from 'react';
-import { phoneStore } from '../../../stores/PhoneStore';
+
 import { Button } from '../Button';
+import { phoneStore } from '../../../stores/PhoneStore';
+
 import styles from './Counter.module.scss';
 
 export const Counter = () => {

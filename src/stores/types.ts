@@ -17,3 +17,21 @@ type PhoneChars = {
   inductive: boolean;
   price: string;
 };
+
+export type TableRowName =
+  | 'manufacturer'
+  | 'releaseYear'
+  | 'screenSize'
+  | 'country'
+  | 'memory'
+  | 'refreshRate'
+  | 'nfc'
+  | 'esim'
+  | 'inductive'
+  | 'price';
+
+export type TableRowType = {
+  rowName: TableRowName;
+  rowTitle: string;
+  rowChars: (string | boolean)[];
+};

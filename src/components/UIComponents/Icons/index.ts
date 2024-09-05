@@ -1,7 +1,7 @@
 import { AccountIcon } from './AccountIcon';
-import { ErrorIcon } from './ErrorIcon';
-import { SuccessIcon } from './SuccessIcon';
 import { ChevronIcon } from './ChevronIcon';
+import { ErrorIcon } from './ErrorIcon';
 import { ReplaceIcon } from './ReplaceIcon';
+import { SuccessIcon } from './SuccessIcon';
 
-export { AccountIcon, ErrorIcon, SuccessIcon, ChevronIcon, ReplaceIcon };
+export { AccountIcon, ChevronIcon, ErrorIcon, ReplaceIcon, SuccessIcon };
