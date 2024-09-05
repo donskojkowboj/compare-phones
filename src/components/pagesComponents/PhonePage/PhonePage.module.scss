@@ -1,10 +1,12 @@
 .phonePage {
   margin-top: 60px;
+
   &__topBlock {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   &__title {
     color: #828286;
     font-size: 48px;
@@ -12,23 +14,26 @@
     line-height: 1.25;
     letter-spacing: 0.96px;
   }
-  &__tableHeader {
+
+  &__tableWrapper {
     width: 100%;
-    height: 204px;
     display: flex;
     gap: 20px;
   }
+
   &__phoneList {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
   }
+
   &__firstColumn {
     width: 255px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
   }
+
   &__label {
     display: flex;
     align-items: center;
@@ -38,8 +43,10 @@
     font-size: 18px;
     letter-spacing: 0.36px;
   }
+
   &__tableBody {
     margin-top: 77px;
+    padding-bottom: 90px;
     background-color: #F4F9FC;
   }
 }

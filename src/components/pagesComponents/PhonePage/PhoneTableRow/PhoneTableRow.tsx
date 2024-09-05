@@ -1,9 +1,9 @@
 import { TableRowType } from '../../../../stores/types';
-
 import { SuccessIcon } from '../../../UIComponents/Icons';
 import { ErrorIcon } from '../../../UIComponents/Icons';
 
 import styles from './PhoneTableRow.module.scss';
+import commonStyles from '../PhonePage.module.scss';
 
 type PhoneTableRowProps = {
   row: TableRowType;
@@ -18,9 +18,11 @@ export const PhoneTableRow = ({ row }: PhoneTableRowProps) => {
   };
 
   return (
-    <div className={styles.tableRow}>
-      <div className={styles.tableRow__firstColumn}>
-        <div className={styles.tableRow__item}>{row.rowTitle}</div>
+    <div
+      className={`${commonStyles.phonePage__tableWrapper} ${styles.tableRow__char}`}
+    >
+      <div className={commonStyles.phonePage__firstColumn}>
+        <div className={styles.tableRow__title}>{row.rowTitle}</div>
       </div>
 
       <ul className={styles.tableRow__list}>

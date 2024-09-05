@@ -1,10 +1,11 @@
 import { observer } from 'mobx-react-lite';
 
-import { PhoneTableRow } from './PhoneTableRow';
-import { phoneStore } from '../../../stores/PhoneStore';
 import { Container } from '../Container';
-import { PhoneCard } from './PhoneCard';
 import { Counter } from '../../UIComponents/Counter';
+import { PhoneCard } from './PhoneCard';
+import { phoneStore } from '../../../stores/PhoneStore';
+import { PhoneTableRow } from './PhoneTableRow';
+
 import styles from './PhonePage.module.scss';
 
 export const PhonePage = observer(() => {
@@ -18,7 +19,7 @@ export const PhonePage = observer(() => {
           <Counter />
         </div>
 
-        <div className={styles.phonePage__tableHeader}>
+        <div className={styles.phonePage__tableWrapper}>
           <div className={styles.phonePage__firstColumn}>
             <label className={styles.phonePage__label}>
               <input type="checkbox" />

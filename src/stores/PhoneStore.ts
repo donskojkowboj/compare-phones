@@ -1,4 +1,5 @@
 import { makeAutoObservable } from 'mobx';
+
 import { PhoneType, TableRowType } from './types';
 import phonesData from '../api/data/PhonesData.json';
 

@@ -1,26 +1,31 @@
-
 .tableRow {
   border-top: 1px solid #CDCFD2;
   display: flex;
   width: 100%;
-  &:nth-child(10) {
-    border-bottom: 1px solid #CDCFD2;
+  border-top: 1px solid #CDCFD2;
+
+  &__char {
+    border-top: 1px solid #CDCFD2;
+
+    &:last-child {
+      border-bottom: 1px solid #CDCFD2;
+    }
   }
-  &__firstColumn {
-    width: 255px;
-  }
-  &__item {
+
+  &__title {
     padding: 50px 0;
     color: #A4A9B9;
     font-size: 18px;
     font-weight: 500;
     text-transform: uppercase;
   }
+
   &__list {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
+
     &_item {
       width: 130px;
       text-align: center;

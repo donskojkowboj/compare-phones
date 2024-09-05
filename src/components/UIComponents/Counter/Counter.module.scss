@@ -3,19 +3,23 @@
   display: flex;
   gap: 5px;
   color: #0d5adc;
+
   &__text {
     font-size: 18px;
     letter-spacing: 0.36px;
   }
+
   &__list {
     display: flex;
     gap: 5px;
     font-size: 18px;
   }
+
   &__counterBtn {
     font-size: 18px;
     letter-spacing: 0.36px;
   }
+
   &__count {
     font-size: 18px;
     letter-spacing: 0.36px;

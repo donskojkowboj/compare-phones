@@ -1,5 +1,5 @@
-import { Container } from '../Container';
 import { AccountIcon } from '../../UIComponents/Icons';
+import { Container } from '../Container';
 
 import styles from './Header.module.scss';
 
