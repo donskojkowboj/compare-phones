@@ -101,6 +101,40 @@
         "inductive": true,
         "price": "116499 ₽"
       }
+    },
+    {
+      "id": 7,
+      "name": "Motorola Razr 40 ULTRA",
+      "image": "/assets/images/motorola-razr-40-ultra-8.png",
+      "chars": {
+        "manufacturer": "Motorola",
+        "releaseYear": "2023",
+        "screenSize": "6.9",
+        "country": "Китай",
+        "memory": "256 ГБ",
+        "refreshRate": "144 Гц",
+        "nfc": true,
+        "esim": true,
+        "inductive": true,
+        "price": "99999 ₽"
+      }
+    },
+    {
+      "id": 8,
+      "name": "OnePlus 12",
+      "image": "/assets/images/one-plus-12.png",
+      "chars": {
+        "manufacturer": "OnePlus",
+        "releaseYear": "2024",
+        "screenSize": "6.82",
+        "country": "Китай",
+        "memory": "256 ГБ",
+        "refreshRate": "120 Гц",
+        "nfc": true,
+        "esim": true,
+        "inductive": true,
+        "price": "81990 ₽"
+      }
     }
   ]
 }

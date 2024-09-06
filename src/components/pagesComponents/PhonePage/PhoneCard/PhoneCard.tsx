@@ -1,17 +1,22 @@
+import { MouseEvent } from 'react';
+
 import { Button } from '../../../UIComponents/Button';
 import { ChevronIcon } from '../../../UIComponents/Icons';
-import { PhoneType } from '../../../../stores/types';
 
 import styles from './PhoneCard.module.scss';
 
-type PhoneCardProps = Pick<PhoneType, 'image' | 'name'>;
+type PhoneCardProps = {
+  name: string;
+  image: string;
+  onClick: (e: MouseEvent<HTMLButtonElement>) => void;
+};
 
-export const PhoneCard = ({ name, image }: PhoneCardProps) => {
+export const PhoneCard = ({ name, image, onClick }: PhoneCardProps) => {
   return (
     <div className={styles.phoneCard}>
       <div className={styles.phoneCard__innerWrapper}>
         <img className={styles.phoneCard__img} src={image} alt={name} />
-        <Button additionalClassname={styles.phoneCard__btn}>
+        <Button onClick={onClick} additionalClassname={styles.phoneCard__btn}>
           <ChevronIcon />
         </Button>
       </div>

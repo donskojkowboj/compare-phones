@@ -7,6 +7,7 @@ class PhoneStore {
   phones: PhoneType[] = [];
   displayedPhones: PhoneType[] = [];
   displayedPhonesCount = 3;
+  remainingPhones: PhoneType[] = [];
   tableRows: TableRowType[] = [
     {
       rowName: 'manufacturer',
@@ -79,11 +80,18 @@ class PhoneStore {
   setDisplayedPhones = (data: PhoneType[]) => {
     this.displayedPhones = data;
     this.updateTableRowsData();
+    this.setRemainingPhones(this.phones, this.displayedPhones);
   };
 
   setDisplayedPhonesCount = (count: number) => {
     this.displayedPhonesCount = count;
     this.setDisplayedPhones(this.phones.slice(0, count));
+  };
+
+  setRemainingPhones = (arr1: PhoneType[], arr2: PhoneType[]) => {
+    this.remainingPhones = [
+      ...arr1.filter((el) => !arr2.some((el2) => el === el2)),
+    ];
   };
 
   updateTableRowsData = () => {
