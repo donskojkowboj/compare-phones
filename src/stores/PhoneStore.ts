@@ -89,9 +89,8 @@ class PhoneStore {
   };
 
   setRemainingPhones = (arr1: PhoneType[], arr2: PhoneType[]) => {
-    this.remainingPhones = [
-      ...arr1.filter((el) => !arr2.some((el2) => el === el2)),
-    ];
+    const set = new Set(arr2);
+    this.remainingPhones = arr1.filter((el) => !set.has(el));
   };
 
   updateTableRowsData = () => {

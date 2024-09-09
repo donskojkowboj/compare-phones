@@ -1,22 +1,21 @@
-import { observer } from 'mobx-react-lite';
 import { useState } from 'react';
+import { observer } from 'mobx-react-lite';
 
 import { Container } from '../Container';
 import { Counter } from '../../UIComponents/Counter';
 import { PhoneCard } from './PhoneCard';
 import { phoneStore } from '../../../stores/PhoneStore';
 import { PhoneTableRow } from './PhoneTableRow';
-import { PhonePopUp } from './PhonePopUp';
 
 import styles from './PhonePage.module.scss';
 
 export const PhonePage = observer(() => {
   const { displayedPhones, tableRows } = phoneStore;
 
-  const [isClicked, setIsClicked] = useState(false);
+  const [activeCard, setActiveCard] = useState<string | null>(null);
 
-  const handleTogglePopUp = () => {
-    setIsClicked(!isClicked);
+  const handleCardSelect = (name: string) => {
+    setActiveCard(activeCard === name ? null : name);
   };
 
   return (
@@ -36,14 +35,14 @@ export const PhonePage = observer(() => {
           </div>
 
           <div className={styles.phonePage__phoneList}>
-            {isClicked && <PhonePopUp />}
             {displayedPhones.map((phone) => {
               return (
                 <PhoneCard
                   name={phone.name}
                   key={phone.id}
                   image={phone.image}
-                  onClick={handleTogglePopUp}
+                  isActive={activeCard === phone.name}
+                  onSelectCard={handleCardSelect}
                 />
               );
             })}
