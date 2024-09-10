@@ -1,47 +1,55 @@
-import { useState } from 'react';
+import { RefObject, useRef } from 'react';
 
-import { useOutsideClick } from '../../../../hooks/useOutsideClick';
 import { Button } from '../../../UIComponents/Button';
 import { ReplaceIcon } from '../../../UIComponents/Icons';
 import { phoneStore } from '../../../../stores/PhoneStore';
+import { useOutsideClick } from '../../../../hooks/useOutsideClick';
 
 import styles from './PhonePopUp.module.scss';
 
-export const PhonePopUp = () => {
+interface PhonePopUpProps {
+  isOpen: boolean;
+  onClose?: () => void;
+  buttonRef: RefObject<HTMLDivElement>;
+}
+
+export const PhonePopUp = ({ isOpen, onClose, buttonRef }: PhonePopUpProps) => {
   const { remainingPhones } = phoneStore;
 
-  const [isPopUpActive, setIsPopUpActive] = useState(true);
+  const popupRef = useRef(null);
 
-  const ref = useOutsideClick(() => {
-    if (isPopUpActive) {
-      setIsPopUpActive(false);
-    }
-  });
+  useOutsideClick(
+    popupRef,
+    () => {
+      if (!onClose) {
+        return;
+      }
+      onClose();
+    },
+    buttonRef,
+  );
 
-  if (isPopUpActive)
-    return (
-      <div ref={ref} className={styles.popup}>
-        <input
-          className={styles.popup__search}
-          type="text"
-          placeholder="Поиск"
-        />
-        <div className={styles.popup__list}>
-          {remainingPhones.map((phone) => {
-            return (
-              <div className={styles.popup__listItem} key={phone.id}>
-                <div className={styles.popup__wrapper}>
-                  <Button>
-                    <ReplaceIcon />
-                  </Button>
-                  <img className={styles.popup__img} src={phone.image} alt="" />
-                </div>
-                <span className={styles.popup__name}>{phone.name}</span>
+  if (!isOpen) {
+    return null;
+  }
+  return (
+    <div ref={popupRef} className={styles.popup}>
+      <input className={styles.popup__search} type="text" placeholder="Поиск" />
+      <div className={styles.popup__list}>
+        {remainingPhones.map((phone) => {
+          return (
+            <div className={styles.popup__listItem} key={phone.id}>
+              <div className={styles.popup__wrapper}>
+                <Button>
+                  <ReplaceIcon />
+                </Button>
+                <img className={styles.popup__img} src={phone.image} alt="" />
               </div>
-            );
-          })}
-        </div>
+              <span className={styles.popup__name}>{phone.name}</span>
+            </div>
+          );
+        })}
       </div>
-    );
-  return null;
+    </div>
+  );
 };

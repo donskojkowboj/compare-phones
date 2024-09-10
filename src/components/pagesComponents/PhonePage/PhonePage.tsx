@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { observer } from 'mobx-react-lite';
 
 import { Container } from '../Container';
@@ -11,12 +10,6 @@ import styles from './PhonePage.module.scss';
 
 export const PhonePage = observer(() => {
   const { displayedPhones, tableRows } = phoneStore;
-
-  const [activeCard, setActiveCard] = useState<string | null>(null);
-
-  const handleCardSelect = (name: string) => {
-    setActiveCard(activeCard === name ? null : name);
-  };
 
   return (
     <section className={styles.phonePage}>
@@ -41,8 +34,6 @@ export const PhonePage = observer(() => {
                   name={phone.name}
                   key={phone.id}
                   image={phone.image}
-                  isActive={activeCard === phone.name}
-                  onSelectCard={handleCardSelect}
                 />
               );
             })}
