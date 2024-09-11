@@ -29,7 +29,7 @@
   }
 
   &__firstColumn {
-    width: 255px;
+    min-width: 255px;
     display: flex;
     align-items: center;
     justify-content: flex-start;

@@ -7,12 +7,12 @@ import { PhoneType } from '../../../../stores/types';
 
 import styles from './PhoneCard.module.scss';
 
-type PhoneCardProps = Pick<PhoneType, 'image' | 'name'>;
+type PhoneCardProps = Pick<PhoneType, 'image' | 'name'> & { cardId: number };
 
-export const PhoneCard = ({ image, name }: PhoneCardProps) => {
+export const PhoneCard = ({ image, name, cardId }: PhoneCardProps) => {
   const [isShowPopup, setIsShowPopup] = useState(false);
 
-  const buttonRef = useRef(null);
+  const openBtnRef = useRef(null);
 
   const handlePopupToggle = () => {
     setIsShowPopup((prev) => {
@@ -23,19 +23,19 @@ export const PhoneCard = ({ image, name }: PhoneCardProps) => {
   return (
     <div className={styles.phoneCard}>
       <div className={styles.phoneCard__innerWrapper}>
-        {
-          <PhonePopUp
-            isOpen={isShowPopup}
-            onClose={handlePopupToggle}
-            buttonRef={buttonRef}
-          />
-        }
+        <PhonePopUp
+          cardId={cardId}
+          isOpen={isShowPopup}
+          onClose={handlePopupToggle}
+          openBtnRef={openBtnRef}
+        />
 
         <img className={styles.phoneCard__img} src={image} alt={name} />
+
         <Button
           onClick={handlePopupToggle}
           additionalClassname={styles.phoneCard__btn}
-          buttonRef={buttonRef}
+          openBtnRef={openBtnRef}
         >
           <ChevronIcon />
         </Button>

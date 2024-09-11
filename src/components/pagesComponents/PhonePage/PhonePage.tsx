@@ -32,6 +32,7 @@ export const PhonePage = observer(() => {
               return (
                 <PhoneCard
                   name={phone.name}
+                  cardId={phone.id}
                   key={phone.id}
                   image={phone.image}
                 />

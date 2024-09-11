@@ -102,6 +102,28 @@ class PhoneStore {
       return newRow;
     });
   };
+
+  replacePhones = (id1: number, id2: number) => {
+    const index1 = this.phones.findIndex((phone) => phone.id === id1);
+    const index2 = this.phones.findIndex((phone) => phone.id === id2);
+
+    const updatedPhones = [...this.phones];
+
+    [updatedPhones[index1], updatedPhones[index2]] = [
+      updatedPhones[index2],
+      updatedPhones[index1],
+    ];
+
+    this.phones = updatedPhones;
+
+    const updatedDisplayedPhones = this.displayedPhones.map((phone) => {
+      if (phone.id === id1) return updatedPhones[index1];
+      if (phone.id === id2) return updatedPhones[index2];
+      return phone;
+    });
+
+    this.setDisplayedPhones(updatedDisplayedPhones);
+  };
 }
 
 export const phoneStore = new PhoneStore();
