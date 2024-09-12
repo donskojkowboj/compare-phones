@@ -103,26 +103,21 @@ class PhoneStore {
     });
   };
 
-  replacePhones = (id1: number, id2: number) => {
-    const index1 = this.phones.findIndex((phone) => phone.id === id1);
-    const index2 = this.phones.findIndex((phone) => phone.id === id2);
+  replacePhones = (replacedID: number, replacingID: number) => {
+    const replacingPhoneIndex = this.phones.findIndex(
+      (phone) => phone.id === replacingID,
+    );
+    const replacedPhoneIndex = this.phones.findIndex(
+      (phone) => phone.id === replacedID,
+    );
 
-    const updatedPhones = [...this.phones];
+    const replacingPhone = this.phones[replacingPhoneIndex];
+    const replacedPhone = this.phones[replacedPhoneIndex];
 
-    [updatedPhones[index1], updatedPhones[index2]] = [
-      updatedPhones[index2],
-      updatedPhones[index1],
-    ];
+    this.phones[replacingPhoneIndex] = replacedPhone;
+    this.phones[replacedPhoneIndex] = replacingPhone;
 
-    this.phones = updatedPhones;
-
-    const updatedDisplayedPhones = this.displayedPhones.map((phone) => {
-      if (phone.id === id1) return updatedPhones[index1];
-      if (phone.id === id2) return updatedPhones[index2];
-      return phone;
-    });
-
-    this.setDisplayedPhones(updatedDisplayedPhones);
+    this.setDisplayedPhones(this.phones.slice(0, this.displayedPhonesCount));
   };
 }
 

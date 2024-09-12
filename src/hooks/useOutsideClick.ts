@@ -2,11 +2,16 @@ import { useEffect, RefObject } from 'react';
 
 type Event = MouseEvent | TouchEvent;
 
-export const useOutsideClick = <T extends HTMLElement = HTMLElement>(
-  ref: RefObject<T>,
-  handler: (event: Event) => void,
-  exceptElementRef?: RefObject<T>,
-) => {
+interface useOutsideClickProps<T extends HTMLElement = HTMLElement> {
+  ref: RefObject<T>;
+  handler: (event: Event) => void;
+  exceptElementRef?: RefObject<T>;
+}
+export const useOutsideClick = ({
+  ref,
+  handler,
+  exceptElementRef,
+}: useOutsideClickProps) => {
   useEffect(() => {
     const listener = (event: Event) => {
       const el = ref?.current;

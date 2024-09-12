@@ -1,10 +1,10 @@
 import { RefObject, useRef } from 'react';
 
+import { PopUpItem } from './PopUpItem';
 import { phoneStore } from '../../../../stores/PhoneStore';
 import { useOutsideClick } from '../../../../hooks/useOutsideClick';
 
 import styles from './PhonePopUp.module.scss';
-import { PopUpItem } from './PopUpItem';
 
 interface PhonePopUpProps {
   isOpen: boolean;
@@ -23,17 +23,19 @@ export const PhonePopUp = ({
 
   const popupRef = useRef(null);
 
-  useOutsideClick(
-    popupRef,
-    () => {
-      if (!onClose) {
-        return;
-      }
+  const handleOutsideClick = () => {
+    if (!onClose) {
+      return;
+    }
 
-      onClose();
-    },
-    openBtnRef,
-  );
+    onClose();
+  };
+
+  useOutsideClick({
+    ref: popupRef,
+    handler: handleOutsideClick,
+    exceptElementRef: openBtnRef,
+  });
 
   if (!isOpen) {
     return null;

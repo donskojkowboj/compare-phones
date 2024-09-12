@@ -35,7 +35,7 @@ export const PhoneCard = ({ image, name, cardId }: PhoneCardProps) => {
         <Button
           onClick={handlePopupToggle}
           additionalClassname={styles.phoneCard__btn}
-          openBtnRef={openBtnRef}
+          btnRef={openBtnRef}
         >
           <ChevronIcon />
         </Button>

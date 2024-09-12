@@ -5,7 +5,7 @@ import styles from './Button.module.scss';
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   isActive?: boolean;
   additionalClassname?: string;
-  openBtnRef?: RefObject<HTMLButtonElement>;
+  btnRef?: RefObject<HTMLButtonElement>;
   children: ReactNode;
 }
 
@@ -13,7 +13,7 @@ export const Button = ({
   isActive,
   children,
   additionalClassname,
-  openBtnRef,
+  btnRef,
   ...rest
 }: ButtonProps) => {
   const createClassname = () => {
@@ -21,7 +21,7 @@ export const Button = ({
   };
 
   return (
-    <button ref={openBtnRef} className={createClassname()} {...rest}>
+    <button ref={btnRef} className={createClassname()} {...rest}>
       {Boolean(children) && <span>{children}</span>}
     </button>
   );
