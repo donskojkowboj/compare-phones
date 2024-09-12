@@ -7,6 +7,7 @@ class PhoneStore {
   phones: PhoneType[] = [];
   displayedPhones: PhoneType[] = [];
   displayedPhonesCount = 3;
+  remainingPhones: PhoneType[] = [];
   tableRows: TableRowType[] = [
     {
       rowName: 'manufacturer',
@@ -79,11 +80,17 @@ class PhoneStore {
   setDisplayedPhones = (data: PhoneType[]) => {
     this.displayedPhones = data;
     this.updateTableRowsData();
+    this.setRemainingPhones(this.phones, this.displayedPhones);
   };
 
   setDisplayedPhonesCount = (count: number) => {
     this.displayedPhonesCount = count;
     this.setDisplayedPhones(this.phones.slice(0, count));
+  };
+
+  setRemainingPhones = (arr1: PhoneType[], arr2: PhoneType[]) => {
+    const set = new Set(arr2);
+    this.remainingPhones = arr1.filter((el) => !set.has(el));
   };
 
   updateTableRowsData = () => {
@@ -94,6 +101,23 @@ class PhoneStore {
       );
       return newRow;
     });
+  };
+
+  replacePhones = (replacedID: number, replacingID: number) => {
+    const replacingPhoneIndex = this.phones.findIndex(
+      (phone) => phone.id === replacingID,
+    );
+    const replacedPhoneIndex = this.phones.findIndex(
+      (phone) => phone.id === replacedID,
+    );
+
+    const replacingPhone = this.phones[replacingPhoneIndex];
+    const replacedPhone = this.phones[replacedPhoneIndex];
+
+    this.phones[replacingPhoneIndex] = replacedPhone;
+    this.phones[replacedPhoneIndex] = replacingPhone;
+
+    this.setDisplayedPhones(this.phones.slice(0, this.displayedPhonesCount));
   };
 }
 

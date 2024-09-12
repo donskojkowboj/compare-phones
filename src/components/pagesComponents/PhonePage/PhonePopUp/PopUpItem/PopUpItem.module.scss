@@ -1,0 +1,20 @@
+.item {
+  display: flex;
+  gap: 23px;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  &__img {
+    width: 50px;
+    height: auto;
+  }
+
+  &__name {
+    font-size: 18px;
+    align-self: center;
+  }
+}

@@ -26,11 +26,13 @@ export const PhonePage = observer(() => {
               Показать различия
             </label>
           </div>
+
           <div className={styles.phonePage__phoneList}>
             {displayedPhones.map((phone) => {
               return (
                 <PhoneCard
                   name={phone.name}
+                  cardId={phone.id}
                   key={phone.id}
                   image={phone.image}
                 />
