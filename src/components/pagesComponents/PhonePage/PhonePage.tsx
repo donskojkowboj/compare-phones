@@ -1,4 +1,5 @@
 import { observer } from 'mobx-react-lite';
+import { useState } from 'react';
 
 import { Container } from '../Container';
 import { Counter } from '../../UIComponents/Counter';
@@ -7,7 +8,6 @@ import { phoneStore } from '../../../stores/PhoneStore';
 import { PhoneTableRow } from './PhoneTableRow';
 
 import styles from './PhonePage.module.scss';
-import { useState } from 'react';
 
 export const PhonePage = observer(() => {
   const { displayedPhones, tableRows, filteredRows } = phoneStore;
