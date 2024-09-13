@@ -60,7 +60,7 @@ class PhoneStore {
       rowChars: [],
     },
   ];
-  filteredRows: TableRowType[] = [];
+  filteredTableRows: TableRowType[] = [];
 
   constructor() {
     makeAutoObservable(this);
@@ -106,7 +106,7 @@ class PhoneStore {
   };
 
   displayDifferences = () => {
-    this.filteredRows = this.tableRows.filter((tableRow) => {
+    this.filteredTableRows = this.tableRows.filter((tableRow) => {
       const referenceChars = tableRow.rowChars[0];
       return this.displayedPhones.some(
         (phone) => phone.chars[tableRow.rowName] !== referenceChars,

@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Container } from '../Container';
 import { Counter } from '../../UIComponents/Counter';
@@ -10,13 +10,23 @@ import { PhoneTableRow } from './PhoneTableRow';
 import styles from './PhonePage.module.scss';
 
 export const PhonePage = observer(() => {
-  const { displayedPhones, tableRows, filteredRows } = phoneStore;
+  const { displayedPhones, tableRows, filteredTableRows } = phoneStore;
 
-  const [isChecked, setIsChecked] = useState(false);
+  const [filteredRows, setFilteredRows] = useState(tableRows);
+  const [isShowOnlyDifferences, setIsShowOnlyDifferences] = useState(false);
 
   const handleCheckboxToggle = () => {
-    setIsChecked((prev) => !prev);
+    setIsShowOnlyDifferences((prev) => !prev);
   };
+
+  useEffect(() => {
+    if (isShowOnlyDifferences) {
+      setFilteredRows(filteredTableRows);
+    }
+    if (!isShowOnlyDifferences) {
+      setFilteredRows(tableRows);
+    }
+  }, [isShowOnlyDifferences, tableRows, filteredTableRows]);
 
   return (
     <section className={styles.phonePage}>
@@ -30,7 +40,7 @@ export const PhonePage = observer(() => {
           <div className={styles.phonePage__firstColumn}>
             <label className={styles.phonePage__label}>
               <input
-                checked={isChecked}
+                checked={isShowOnlyDifferences}
                 onChange={handleCheckboxToggle}
                 type="checkbox"
               />
@@ -53,7 +63,7 @@ export const PhonePage = observer(() => {
         </div>
 
         <div className={styles.phonePage__tableBody}>
-          {(isChecked ? filteredRows : tableRows).map((row) => {
+          {filteredRows.map((row) => {
             return <PhoneTableRow key={row.rowTitle} row={row} />;
           })}
         </div>
