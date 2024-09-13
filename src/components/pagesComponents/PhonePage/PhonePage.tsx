@@ -7,9 +7,16 @@ import { phoneStore } from '../../../stores/PhoneStore';
 import { PhoneTableRow } from './PhoneTableRow';
 
 import styles from './PhonePage.module.scss';
+import { useState } from 'react';
 
 export const PhonePage = observer(() => {
-  const { displayedPhones, tableRows } = phoneStore;
+  const { displayedPhones, tableRows, filteredRows } = phoneStore;
+
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxToggle = () => {
+    setIsChecked((prev) => !prev);
+  };
 
   return (
     <section className={styles.phonePage}>
@@ -22,7 +29,11 @@ export const PhonePage = observer(() => {
         <div className={styles.phonePage__tableWrapper}>
           <div className={styles.phonePage__firstColumn}>
             <label className={styles.phonePage__label}>
-              <input type="checkbox" />
+              <input
+                checked={isChecked}
+                onChange={handleCheckboxToggle}
+                type="checkbox"
+              />
               Показать различия
             </label>
           </div>
@@ -42,7 +53,7 @@ export const PhonePage = observer(() => {
         </div>
 
         <div className={styles.phonePage__tableBody}>
-          {tableRows.map((row) => {
+          {(isChecked ? filteredRows : tableRows).map((row) => {
             return <PhoneTableRow key={row.rowTitle} row={row} />;
           })}
         </div>
