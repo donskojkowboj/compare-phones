@@ -10,7 +10,7 @@ import { PhoneTableRow } from './PhoneTableRow';
 import styles from './PhonePage.module.scss';
 
 export const PhonePage = observer(() => {
-  const { displayedPhones, tableRows, filteredTableRows } = phoneStore;
+  const { displayedPhones, tableRows } = phoneStore;
 
   const [filteredRows, setFilteredRows] = useState(tableRows);
   const [isShowOnlyDifferences, setIsShowOnlyDifferences] = useState(false);
@@ -20,13 +20,21 @@ export const PhonePage = observer(() => {
   };
 
   useEffect(() => {
-    if (isShowOnlyDifferences) {
-      setFilteredRows(filteredTableRows);
-    }
     if (!isShowOnlyDifferences) {
       setFilteredRows(tableRows);
     }
-  }, [isShowOnlyDifferences, tableRows, filteredTableRows]);
+
+    if (isShowOnlyDifferences) {
+      setFilteredRows(
+        tableRows.filter((tableRow) => {
+          const referenceChars = tableRow.rowChars[0];
+          return displayedPhones.some(
+            (phone) => phone.chars[tableRow.rowName] !== referenceChars,
+          );
+        }),
+      );
+    }
+  }, [isShowOnlyDifferences, tableRows]);
 
   return (
     <section className={styles.phonePage}>
