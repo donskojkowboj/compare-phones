@@ -20,10 +20,6 @@ export const PhonePage = observer(() => {
   };
 
   useEffect(() => {
-    if (!isShowOnlyDifferences) {
-      setFilteredRows(tableRows);
-    }
-
     if (isShowOnlyDifferences) {
       setFilteredRows(
         tableRows.filter((tableRow) => {
@@ -33,7 +29,9 @@ export const PhonePage = observer(() => {
           );
         }),
       );
+      return;
     }
+    setFilteredRows(tableRows);
   }, [isShowOnlyDifferences, tableRows]);
 
   return (
