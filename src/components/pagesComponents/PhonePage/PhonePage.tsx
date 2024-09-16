@@ -19,16 +19,16 @@ export const PhonePage = observer(() => {
     setIsShowOnlyDifferences((prev) => !prev);
   };
 
+  const newRows = tableRows.filter((tableRow) => {
+    const referenceChars = tableRow.rowChars[0];
+    return displayedPhones.some(
+      (phone) => phone.chars[tableRow.rowName] !== referenceChars,
+    );
+  });
+
   useEffect(() => {
     if (isShowOnlyDifferences) {
-      setFilteredRows(
-        tableRows.filter((tableRow) => {
-          const referenceChars = tableRow.rowChars[0];
-          return displayedPhones.some(
-            (phone) => phone.chars[tableRow.rowName] !== referenceChars,
-          );
-        }),
-      );
+      setFilteredRows(newRows);
       return;
     }
     setFilteredRows(tableRows);
